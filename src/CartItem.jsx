@@ -31,11 +31,16 @@ const CartItem = ({ onContinueShopping, setNumOfItems, numOfItems, setAdded}) =>
   };
 
   const handleRemove = (item) => {
+    console.log("here");
+    console.log(cart.map(item => item.name));
     dispatch(removeItem(item));
+    console.log("here2");
     setAdded((prevState) => ({
         ...prevState,
         [item.name]: false,
     }));
+    console.log("here3");
+    console.log(cart.map(item => item.name));
     setNumOfItems(numOfItems - 1);
   };
 
